@@ -2,8 +2,11 @@
 <%= f.input :name %>
 <%= f.input :address %>
 <%= f.input :phone_number %>
-<%= f.input :category %>
+<%= f.input :category, collection: ["Chinese", "Italian", "Japanese", "French", "Belgian"] %>
 <%= f.submit %>
 <% end %>
+
+
+
 
 <%= link_to("Cancel", restaurants_path) %>
