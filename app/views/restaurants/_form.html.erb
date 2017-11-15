@@ -3,10 +3,10 @@
 <%= f.input :address %>
 <%= f.input :phone_number %>
 <%= f.input :category, collection: ["Chinese", "Italian", "Japanese", "French", "Belgian"] %>
-<%= f.submit %>
+<%= f.submit "Submit", class: "btn btn-primary"%>
 <% end %>
 
 
 
 
-<%= link_to("Cancel", restaurants_path) %>
+<%= link_to("Cancel", restaurants_path, class: "btn btn-danger") %>

@@ -1,9 +1,12 @@
 
 <div class="container">
-    <% @restaurants.each do |restaurant| %>
-    <h2><%= link_to(restaurant.name, restaurant_path(restaurant.id)) %></h2>
-    <h5><%= restaurant.category %></h5>
+  <% @restaurants.each do |restaurant| %>
+  <h2><%= link_to(restaurant.name, restaurant_path(restaurant.id)) %></h2>
+  <h5><%= restaurant.category %></h5>
+    <% restaurant.reviews.each do |rev| %>
+      <h5>Average rating: <%= rev.rating %></h5>
     <% end %>
+  <% end %>
 
-    <%= link_to("Add a new restaurant", new_restaurant_path, class: "btn btn-primary") %>
+  <%= link_to("Add a new restaurant", new_restaurant_path, class: "btn btn-primary") %>
 </div>
