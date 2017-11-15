@@ -2,7 +2,7 @@
 <div class="container">
   <% @restaurants.each do |restaurant| %>
   <h2><%= link_to(restaurant.name, restaurant_path(restaurant.id)) %></h2>
-  <h5><%= restaurant.category %></h5>
+  <h5><%= restaurant.category.capitalize %></h5>
   <h5>Average rating: <%= restaurant.average_rating %></h5>
   <% end %>
 
