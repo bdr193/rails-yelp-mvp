@@ -22,6 +22,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    authorize()
     @restaurant = Restaurant.find(params[:id])
   end
 
@@ -35,9 +36,10 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    authorize()
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
-    redirect_to restaurants_path
+    restaurant_path(@restaurant)
   end
 
 
